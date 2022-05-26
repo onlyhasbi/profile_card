@@ -12,74 +12,68 @@
   margin: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body,
 html {
-  font-size: 18px;
-  overflow: hidden;
-  font-family: "Kumbh Sans", sans-serif;
+  font-size: 62.5%;
   color: var(--very-dark-desaturated-blue);
 }
 
-main {
-  width: 100%;
-  height: 100vh;
+body {
+  background-image: url("../images/bg-pattern-top.svg"),
+    url("../images/bg-pattern-bottom.svg");
   background-color: var(--dark-cyan);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle-top,
-.circle-bottom {
-  position: absolute;
-  z-index: 0;
-}
-
-.circle-top {
-  top: -86%;
-  left: -23.5%;
-}
-
-.circle-bottom {
-  right: -19.5%;
-  bottom: -106%;
+  background-repeat: no-repeat, no-repeat;
+  background-position: left -29.3rem top -27rem, right -39rem bottom -29.2rem;
+  background-size: 50rem, 60rem;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .card {
-  width: 19.5rem;
+  width: 32.6rem;
+  margin: 14.7rem auto;
   background-color: white;
-  border-radius: 0.75rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  box-shadow: 0 3rem 5rem 2rem rgba(0, 0, 0, 0.1);
 }
 
 .profile-heading {
   position: relative;
+  width: 100%;
+  height: 15rem;
+  background: url("../images/bg-pattern-card.svg") no-repeat;
+  background-position: center top;
 }
 
-.profile-bg {
+.photo-profile {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 6rem;
+  width: 100%;
+  max-width: 10.55rem;
+  top: 8.7rem;
+  left: 50%;
+  transform: translate(-50%);
+  border: 5px solid #fff;
+}
+
+.photo {
   display: block;
   width: 100%;
-  object-fit: contain;
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-}
-
-.profile-photo {
-  position: absolute;
-  display: block;
-  top: 61%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  border: 5px solid white;
+  height: auto;
 }
 
 .profile-content {
   margin: 0 auto;
-  margin-top: 3.94rem;
-  margin-bottom: 1.5rem;
+  margin-top: 6.2rem;
+  margin-bottom: 2.2rem;
 }
 
 .profile-age,
@@ -89,42 +83,72 @@ main {
   font-weight: 400;
 }
 
-.profile-name {
-  font-size: 1rem;
+.profile-content h1 {
+  font-size: 1.75rem;
+  letter-spacing: 0.05rem;
+}
+
+.profile-content span {
+  margin-left: 0.5rem;
+  font-weight: 400;
 }
 
 .profile-country {
-  margin-top: 0.4rem;
-  font-size: 0.77rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
 }
 
 .profile-counter {
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  gap: 3.2rem;
   border-top: 0.01rem solid rgba(0, 0, 0, 0.1);
-  padding-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  padding-top: 2.4rem;
+  padding-left: 4.2rem;
+  padding-right: 4.2rem;
+  padding-bottom: 2.5rem;
+}
+
+.profile-item:nth-child(2) {
+  margin-left: 3.7rem;
+  margin-right: 4.5rem;
 }
 
 .counter-heading {
-  font-size: 1rem;
+  font-size: 1.97rem;
 }
 
 .counter-label {
-  font-size: 0.55rem;
-  letter-spacing: 0.05rem;
-  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-top: 0.45rem;
 }
 
-@media only screen and (max-width: 414px) {
+@media screen and (min-width: 800px) {
+  body {
+    background-size: 100rem, 100rem;
+    background-position: left -35.1rem top -52.7rem, right -29rem bottom -65.5rem;
+  }
+
   .card {
-    width: 17rem;
+    width: 35rem;
+    margin: 17.3rem auto;
+  }
+
+  .profile-content {
+    margin-top: 6.2rem;
+    margin-bottom: 2.3rem;
   }
 
   .profile-counter {
-    gap: 2.5rem;
+    padding-left: 4.83rem;
+  }
+
+  .profile-item:nth-child(2) {
+    margin-left: 4.6rem;
+    margin-right: 5.4rem;
+  }
+
+  .counter-heading {
+    font-size: 1.9rem;
   }
 }
